@@ -1,13 +1,12 @@
-	window.initPage = function() {
-		debugger;
-		app.loadDestinations();
-	};
+window.initPage = function() {
+	app.loadDestinations();
+};
 (function($) {
 	var loadDestinations;
 
 	loadDestinations = function () {
 		$.ajax("/travel").done(function(data) {
-			_.each(data, function(item){ console.log(item);});
+			JST["app/templates/destinations.hb"](data);
 
 		});
 	};
