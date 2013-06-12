@@ -6,7 +6,7 @@ window.initPage = function() {
 
 	loadDestinations = function () {
 		$.ajax("/travel").done(function(data) {
-			JST["app/templates/destinations.hb"](data);
+			$('#destinations').html(JST["app/templates/destinations.hb"](data));
 
 		});
 	};

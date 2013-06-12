@@ -24,6 +24,14 @@ describe("the main page", function() {
 			
 			expect(JST["app/templates/destinations.hb"]).toHaveBeenCalledWith(data);
 		});
+		it("adds the template output to the dom", function() {
+			spyOn(JST, "app/templates/destinations.hb").andReturn("<div>bla</div>");
+			affix("#destinations");
+
+			callback(data);
+			
+			expect($('#destinations').html()).toContain("bla");
+		});
 
 	});
 });
