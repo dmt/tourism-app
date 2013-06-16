@@ -9,6 +9,7 @@ window.initPage = function() {
 			$('#destinations').html(JST["app/templates/destinations.hb"](data));
 
 		});
+//		$("body").append(JST["app/templates/create.hb"]());
 	};
 	window.app = window.app || {};
 	app.loadDestinations = loadDestinations;
